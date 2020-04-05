@@ -11,19 +11,24 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 // import localeEn from '@angular/common/locales/en-US-POSIX';
 // import { registerLocaleData } from '@angular/common';
 import { HomePageModule } from './home-page/home-page.module';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { FooterComponent } from './footer/footer.component';
+import { NoticePageModule } from './notice-page/notice-page.module';
 // registerLocaleData(localeEn);
 
 @NgModule({
   declarations: [
     AppComponent,
+    FooterComponent,
     NavigationComponent,
-    NoticePageComponent,
     AnnouncementPageComponent,
-    ContactPageComponent
+    ContactPageComponent,
+    AboutPageComponent,
   ],
   imports: [
     BrowserModule,
     HomePageModule,
+    NoticePageModule,
     AppRoutingModule,
   ],
   providers: [
