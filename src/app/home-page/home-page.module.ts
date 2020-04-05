@@ -6,7 +6,6 @@ import { AnnouncementComponent } from './announcement/announcement.component';
 import { CalendaComponent } from './calenda/calenda.component';
 import { BloodtypeComponent } from './bloodtype/bloodtype.component';
 import { FacebookComponent } from './facebook/facebook.component';
-import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page.component';
 import { MinicalendaComponent } from './minicalenda/minicalenda.component';
 import { PostComponent } from './facebook/post/post.component';
@@ -19,13 +18,12 @@ import { PostComponent } from './facebook/post/post.component';
     CalendaComponent,
     BloodtypeComponent,
     FacebookComponent,
-    FooterComponent,
     HomePageComponent,
     MinicalendaComponent,
     PostComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     HomePageComponent
