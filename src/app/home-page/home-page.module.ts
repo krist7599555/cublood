@@ -8,6 +8,8 @@ import { BloodtypeComponent } from './bloodtype/bloodtype.component';
 import { FacebookComponent } from './facebook/facebook.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page.component';
+import { MinicalendaComponent } from './minicalenda/minicalenda.component';
+import { PostComponent } from './facebook/post/post.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { HomePageComponent } from './home-page.component';
     BloodtypeComponent,
     FacebookComponent,
     FooterComponent,
-    HomePageComponent
+    HomePageComponent,
+    MinicalendaComponent,
+    PostComponent
   ],
   imports: [
     CommonModule
