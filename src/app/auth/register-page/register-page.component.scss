@@ -1,0 +1,20 @@
+input[type='text'],
+input[type='textarea'],
+input[type='number'],
+input[type='password'],
+textarea {
+  @apply .px-3 .py-2 .bg-pink-100 .rounded .w-full .outline-none .mb-6;
+  background-color: #f1eeec;
+}
+label {
+  @apply .pt-4;
+}
+._pair {
+  @apply .flex;
+  > div {
+    @apply .w-1/2;
+  }
+  > div:last-child {
+    @apply .ml-4;
+  }
+}
