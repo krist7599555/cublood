@@ -10,6 +10,7 @@ import { AboutPageComponent } from './about-page/about-page.component';
 import { NoticePageModule } from './notice-page/notice-page.module';
 import { ComponentModule } from './component/component.module';
 import { AuthModule } from './auth/auth.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AuthModule } from './auth/auth.module';
     AboutPageComponent,
   ],
   imports: [
+    HttpClientModule,
     ComponentModule,
     BrowserModule,
     HomePageModule,
