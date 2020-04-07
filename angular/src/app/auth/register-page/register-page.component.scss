@@ -1,8 +1,14 @@
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 5px;
+}
 input[type='text'],
 input[type='textarea'],
 input[type='number'],
 input[type='password'],
-textarea {
+select {
   @apply .px-3 .py-2 .bg-pink-100 .rounded .w-full .outline-none .mb-6;
   background-color: #f1eeec;
 }

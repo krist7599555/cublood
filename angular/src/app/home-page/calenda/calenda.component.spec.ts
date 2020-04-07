@@ -10,7 +10,7 @@ describe('CalendaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ CalendaComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

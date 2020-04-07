@@ -8,7 +8,7 @@ import { ComponentModule } from '../component/component.module';
 
 @NgModule({
   declarations: [ListComponent, NoticePageComponent],
-  imports: [CommonModule, ComponentModule],
-  exports: [NoticePageComponent]
+  imports:      [CommonModule, ComponentModule],
+  exports:      [NoticePageComponent]
 })
 export class NoticePageModule { }

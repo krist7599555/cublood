@@ -11,47 +11,47 @@
 
     <div class="flex flex-wrap justify-between">
       <div class='w-full p-1 mb-4 mt-10 font-bold text-lg text-primary'>ข้อมูลในการเข้าสู่ระบบ</div>
-      <div class='w-full p-1'><label for="email">อีเมล์</label><input type="text"></div>
-      <div class='w-6/12 p-1'><label for="email">รหัสผ่าน</label><input type="password"></div>
-      <div class='w-6/12 p-1'><label for="email">ยืนยันรหัสผ่าน</label><input type="password"></div>
+      <div class='w-full p-1'><label for="email">อีเมล์</label><input name='email' type="text"></div>
+      <div class='w-6/12 p-1'><label for="password">รหัสผ่าน</label><input name='password' type="password"></div>
+      <div class='w-6/12 p-1'><label for="password_confirm">ยืนยันรหัสผ่าน</label><input name='password_confirm' type="password"></div>
       <div class='w-full p-1 mb-4 mt-10 font-bold text-lg text-primary'>ข้อมูลติดต่อ</div>
-      <div class='w-full p-1'><label for="phone">หมายเลขโทรศัพท์</label><input type="text"></div>
-      <div class='w-full p-1'><label for="location">ที่อยู่ปัจจุบัน</label><input class='h-16' type="textarea"></div>
+      <div class='w-full p-1'><label for="phone">หมายเลขโทรศัพท์</label><input name='phone' type="text"></div>
+      <div class='w-full p-1'><label for="address">ที่อยู่ปัจจุบัน</label><input name='address' class='h-16' type="textarea"></div>
       <div class='w-full p-1 mb-4 mt-10 font-bold text-lg text-primary'>ข้อมูลทั่วไป</div>
-      <div class='w-6/12 p-1'><label for="name">ชื่อ</label><input type="text"></div>
-      <div class='w-6/12 p-1'><label for="surname">นามสกุล</label><input type="text"></div>
-      <div class='w-full p-1'><label for="nickname">ชื่อเล่น</label><input type="text"></div>
+      <div class='w-6/12 p-1'><label for="name">ชื่อ</label><input name='name' type="text"></div>
+      <div class='w-6/12 p-1'><label for="surname">นามสกุล</label><input name='surname' type="text"></div>
+      <div class='w-full p-1'><label for="nickname">ชื่อเล่น</label><input name='nickname' type="text"></div>
       <div class='w-full p-1'>
         <label for="birth">วัน/เดือน/ปี เกิด</label>
         <div class="flex">
-          <input class='mr-2' type="number">
-          <input class='mr-2' type="number">
-          <input class='mr-0' type="number">
+          <div class='w-3/12 mr-2'><select class='' name='birth_day' type="number"></select></div>
+          <div class='w-5/12 mr-2'><select class='' name='birth_month' type="number"></select></div>
+          <div class='w-4/12 mr-0'><select class='' name='birth_year' type="number"></select></div>
         </div>
       </div>
       <!-- <div class="w-4/12"></div> -->
-      <div class='w-4/12 p-1'><label for="">เพศ</label><input type='text'></div>
-      <div class='w-4/12 p-1'><label for="">ไซส์เสื้อ</label><input type='text'></div>
-      <div class='w-4/12 p-1'><label for="">น้ำหนัก</label><input type='text'></div>
-      <div class='w-4/12 p-1'><label for="">สถานภาพ</label><input type='text'></div>
-      <div class='w-4/12 p-1'><label for="">สัญชาติ</label><input type='text'></div>
-      <div class='w-4/12 p-1'><label for="">ชั้นปี</label><input type='text'></div>
-      <div class='w-6/12 p-1'><label for="">รหัสนิสิต/บุคลากร</label><input type='text'></div>
-      <div class='w-6/12 p-1'><label for="">คณะ</label><input type='text'></div>
+      <div class='w-4/12 p-1'><label for="gender">เพศ</label><select name='gender' type='text'></select></div>
+      <div class='w-4/12 p-1'><label for="shirt">ไซส์เสื้อ</label><input name='shirt' type='text'></div>
+      <div class='w-4/12 p-1'><label for="weight">น้ำหนัก</label><input name='weight' type='text'></div>
+      <div class='w-4/12 p-1'><label for="status">สถานภาพ</label><select name='status' type='text'></select></div>
+      <div class='w-4/12 p-1'><label for="nationality">สัญชาติ</label><select name='nationality' type='text'></select></div>
+      <div class='w-4/12 p-1'><label for="academic">ชั้นปี</label><select name='academic' type='text'></select></div>
+      <div class='w-6/12 p-1'><label for="student_id">รหัสนิสิต/บุคลากร</label><input name='student_id'input type='text'></div>
+      <div class='w-6/12 p-1'><label for="faculty">คณะ</label><input name='faculty' type='text'></div>
       <div class='w-full p-1 mb-4 mt-10 font-bold text-lg text-primary'>ข้อมูลทางการแพทย์</div>
-      <div class='w-full p-1'><label for="">โรคประจำตัว</label><input class='h-16' type="textarea"></div>
-      <div class='w-6/12 p-1'><label for="">หมู่โลหิต</label><input type="text"></div>
-      <div class='w-6/12 p-1'><label for="">RH</label><input type="text"></div>
+      <div class='w-full p-1'><label for="medical_condition">โรคประจำตัว</label><input name='medical_condition' class='h-16' type="textarea"></div>
+      <div class='w-6/12 p-1'><label for="blood_type">หมู่โลหิต</label><select name='blood_type' type="text"></select></div>
+      <div class='w-6/12 p-1'><label for="rh">RH</label><select name='rh' type="text"></select></div>
       <div class='w-full p-1 mt-8'>
-        <input class='mr-2' type="checkbox">
-        <label>ท่านเคยบริจาคโลหิตมาก่อนหรือไม่</label>
+        <input name='is_donated' class='mr-2' type="checkbox">
+        <label for='is_donated'>ท่านเคยบริจาคโลหิตมาก่อนหรือไม่</label>
       </div>
       <div class='w-full p-1'>
-        <input class='mr-2' type="checkbox">
-        <label>ท่านเคยเข้าร่วมบริจาคโลหิตกับโครงการ <span class='text-primary'>CU BLOOD</span> มาก่อนหรือไม่</label>
+        <input name='is_enrolled' class='mr-2' type="checkbox">
+        <label for='is_enrolled'>ท่านเคยเข้าร่วมบริจาคโลหิตกับโครงการ <span class='text-primary'>CU BLOOD</span> มาก่อนหรือไม่</label>
       </div>
       <div class='w-full p-1 mt-8 mb-24'>
-        <button class='px-8 py-2 bg-primary text-white rounded' type='submit'>ลงทะเบียน</button>
+        <button (click)="onSubmit()" class='px-8 py-2 bg-primary text-white rounded' type='submit'>ลงทะเบียน</button>
       </div>
     </div>
 

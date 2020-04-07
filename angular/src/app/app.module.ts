@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, LOCALE_ID, TRANSLATIONS } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoticePageComponent } from './notice-page/notice-page.component';
 import { AnnouncementPageComponent } from './announcement-page/announcement-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { HomePageModule } from './home-page/home-page.module';

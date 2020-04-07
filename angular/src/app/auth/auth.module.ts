@@ -11,8 +11,8 @@ import { HttpClientModule } from "@angular/common/http"
 
 @NgModule({
   declarations: [LoginPageComponent, RegisterPageComponent, ProfilePageComponent],
-  exports: [LoginPageComponent, RegisterPageComponent, ProfilePageComponent],
-  imports: [CommonModule, ComponentModule, RouterModule, HttpClientModule],
-  providers: [AuthService]
+  exports:      [LoginPageComponent, RegisterPageComponent, ProfilePageComponent],
+  imports:      [CommonModule, ComponentModule, RouterModule, HttpClientModule],
+  providers:    [AuthService]
 })
 export class AuthModule { }

@@ -10,7 +10,7 @@ describe('ContactPageComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ContactPageComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

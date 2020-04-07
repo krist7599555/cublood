@@ -10,7 +10,7 @@ describe('BloodtypeComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ BloodtypeComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

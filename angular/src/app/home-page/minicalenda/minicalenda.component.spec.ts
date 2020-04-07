@@ -10,7 +10,7 @@ describe('MinicalendaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ MinicalendaComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

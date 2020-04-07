@@ -10,7 +10,7 @@ describe('HeadlineComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ HeadlineComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

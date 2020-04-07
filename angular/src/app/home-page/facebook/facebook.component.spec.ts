@@ -10,7 +10,7 @@ describe('FacebookComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ FacebookComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
