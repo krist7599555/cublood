@@ -2,7 +2,7 @@ import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core'
 import { AuthService } from '../auth.service'
 import * as _ from 'lodash'
 import * as $ from 'jquery'
-import { merge_day_month_year, selects_option, register_from_translate_type } from './register-page.form';
+import { selects_option, register_from_translate_type } from './register-page.form';
 
 @Component({
   selector:    'app-register-page',

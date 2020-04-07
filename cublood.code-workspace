@@ -5,11 +5,15 @@
 		},
 		{
 			"path": "rails"
+		},
+		{
+			"path": "nestjs"
 		}
 	],
 	"settings": {
 		"files.associations": {
 			"*.scss": "postcss"
-		}
+		},
+		"explorer.autoReveal": false
 	}
 }

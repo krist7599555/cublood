@@ -4,10 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
-    "build": "ng build",
+    "build": "ng build; mv ./dist/cublood/* ./dist",
     "test": "ng test",
     "lint": "eslint 'src/**/*.ts' --fix",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy": "rsync -r ./dist/* root@128.199.216.159:/var/www/cublood"
   },
   "private": true,
   "dependencies": {
