@@ -1,0 +1,21 @@
+username: 
+password: 
+confirmedPassword: 
+phone: 
+address: 
+name: 
+surname: 
+nickname: 
+gender: 
+shirt: 
+weight: 
+status: "nisit", "teacher", "staff", "alumni"
+nationality: "thai", "foreign"
+academic: 1,2,3,4,5,6,master,docter
+student_id: 
+faculty: 
+medical_condition: 
+is_donated: 
+is_enrolled: 
+blood_type: 
+birth: 

@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "dev": "rails s -p 3177",
+    "console": "rails c"
+  }
+}
