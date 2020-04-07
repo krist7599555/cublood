@@ -10,12 +10,18 @@ class UsersController < ApplicationController
   end
   def create
     params[:birth] = Time.new(params[:birth]) rescue nil
-    # params[:shirt] = params[:shirt].to_i rescue nil
-    # params[:weight] = params[:weight].to_i rescue nil
-    # params[:faculty] = params[:faculty].to_i rescue nil
     user = User.new(params.except(:controller, :action, :user).to_unsafe_h)
     if user.valid?
-      render :json => user.save
+      id = user.save
+      user = User.find_by(id: id)
+      # TODO change hash to object
+      render :json => {
+        access_token: Jwt.encode(
+          id: id,
+          name: user["name"] + ' ' + user["surname"],
+          exp: Time.now.to_i + 3 * 3600
+        )
+      }
     else
       render status: :bad_request, :json => {
         message: 'form is in wrong format', 

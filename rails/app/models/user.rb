@@ -97,7 +97,8 @@ class User
   end
 
   def self.find_by(args)
-    if args.members? :id
+    p args
+    if args.member? :id
       r.table('users').get(args[:id]).run
     else
       r.table('users').filter(args).nth(1).run
