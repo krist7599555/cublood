@@ -4,7 +4,7 @@ class User
   include ActiveModel::Serialization
   include RethinkDB::Shortcuts
 
-  attr_accessor :id, :email, :username, :password, :password_confirm,
+  attr_accessor :id, :email, :password, :password_confirm,
                 :phone, :address, :name, :surname, :nickname, :gender,
                 :shirt, :weight, :status, :nationality, :academic,
                 :student_id, :faculty, :medical_condition, :is_donated,
@@ -18,30 +18,43 @@ class User
   validates :surname,           presence: true
   validates :nickname,          presence: true
   validates :gender,            presence: true, inclusion: {:in => %w(male female)}
-  validates :shirt,             presence: true, numericality: { only_integer: true }
-  validates :weight,            presence: true, numericality: { only_integer: true }
+  validates :shirt,             presence: true, numericality: { only_integer: true }, inclusion: { in: 30..100, message: 'shirt should be in 36..48' }
+  validates :weight,            presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 45, message: "need weight > 45" }
   validates :status,            presence: true, inclusion: {:in => %w(nisit teacher staff alumni)}
-  validates :nationality,       presence: true, inclusion: {:in => %w(thai, foreign)}
+  validates :nationality,       presence: true, inclusion: {:in => %w(thai foreign)}
   validates :academic,          presence: true, inclusion: {:in => %w(1 2 3 4 5 6 master docter)}
-  validates :student_id,        presence: true, format: { with: /\A\d{10}\z/ }
-  validates :faculty,           presence: true, numericality: { only_integer: true }
-  validates :is_donated,        presence: true, inclusion: { in: [ true, false ] }
-  validates :is_enrolled,       presence: true, inclusion: { in: [ true, false ] }
+  validates :student_id,        presence: true, format: { with: /\A\d{10}\z/, message: "need 10 digit only without space" }
+  validates :faculty,           presence: true, numericality: { only_integer: true }, inclusion: { in: 20..100, message: 'faculty might not exist' }
+  validates :is_donated,        inclusion: { in: [ true, false ] }
+  validates :is_enrolled,       inclusion: { in: [ true, false ] }
   validates :blood_type,        presence: true, inclusion: { in: %w(A B O AB), message: "must be A B O AB"}
   validates :rh,                presence: true, inclusion: { in: %w(+ - notsure), message: "must + - notsure"}
-  validates :birth,             presence: true
+  validates :birth,             presence: true, type: { type: :time, message: "birth need to be type time" }
   validates :medical_condition, presence: true
   validate  :password_eq_password_confirm
+  validate  :birth_data_format
+  validate  :email_unique
+  validate  :phone_unique
 
   def password_eq_password_confirm
     errors.add(:password_confirm, "password not same as confirm password") if @password != @password_confirm
+  end
+  def birth_data_format
+    errors.add(:birth, "too young, require age > 17") if @birth + 15.year > Time.now
+    errors.add(:birth, "too old, require age < 70") if @birth + 69.year < Time.now
+  end
+
+  def email_unique
+    errors.add(:email, "this email already used") if r.table('users').filter(email: @email).count().ne(0).run
+  end
+  def phone_unique
+    errors.add(:phone, "this phone already used") if r.table('users').filter(phone: @phone).count().ne(0).run
   end
 
   def attributes
     {
       "id"               => nil,
       "email"            => nil,
-      "username"         => nil,
       "phone"            => nil,
       "address"          => nil,
       "name"             => nil,
@@ -68,7 +81,11 @@ class User
   end
 
   def save
-    r.table('users').insert(self.to_hash, return_changes: true).run
+    r.table('users').insert(
+      self.to_hash.except("id", :id), 
+      return_changes: true, 
+      conflict: "error"
+    ).run["generated_keys"][0]
   end
 
   def self.all
