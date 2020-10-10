@@ -2,7 +2,7 @@ import { AllExceptionsFilter, BadRequestExceptionFilter } from './helper/excepti
 import { AppModule } from './app.module';
 import { NestFactory } from '@nestjs/core';
 import { ValidationPipe } from '@nestjs/common';
-import { config } from './config';
+import { PORT } from './config';
 import * as expressListRoutes from 'express-list-routes';
 
 async function bootstrap() {
@@ -11,7 +11,7 @@ async function bootstrap() {
     .useGlobalFilters(new AllExceptionsFilter())
     .useGlobalFilters(new BadRequestExceptionFilter())
     .useGlobalPipes(new ValidationPipe({ transform: true }))
-    .listen(config.port);
+    .listen(PORT);
   const router = server._events.request._router;
   expressListRoutes({}, 'API:', router);
 }

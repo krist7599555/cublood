@@ -10,4 +10,10 @@ export class UserService {
   get(id: string) {
     return run(users.get(id))
   }
+  filter(query: Partial<User> = {}) {
+    return run(users.filter(query))
+  }
+  update(id: string, user: Partial<User>) {
+    return run(users.get(id).update(user));
+  }
 }

@@ -1,30 +1,25 @@
+import * as dotenv from 'dotenv'
+import * as path from 'path';
 
-import * as _ from 'lodash';
-import * as dotenv from 'dotenv';
+dotenv.config({ path: path.resolve(__dirname, "../.env.default") });
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
-dotenv.config();
+export enum NodeEnv {
+  test        = 'test',
+  development = 'development',
+  production  = 'production',
+}
+function cassert<T>(value: T, err_msg = "some .env is missing") {
+  if (!value) throw new TypeError(err_msg)
+  return value;
+} 
 
-type Env = 'production' | 'development' | 'test'
-
-export const config = {
-  env:        process.env.NODE_ENV as Env,
-  jwt_secret: process.env.JWT_SECRET,
-  db_name:    process.env.DATABASE_NAME || "cublood",
-  host:       process.env.HOST || '0.0.0.0',
-  port:       +(process.env.PORT || 3000),
-};
+export const NODE_ENV      = cassert(process.env.NODE_ENV);
+export const JWT_SECRET    = cassert(process.env.JWT_SECRET);
+export const DATABASE_NAME = cassert(process.env.DATABASE_NAME);
+export const HOST          = cassert(process.env.HOST);
+export const PORT          =+cassert(process.env.PORT);
 
 if (!process.env.JEST_WORKER_ID) {
-  console.log(config);
-  console.log(`API http://${config.host}:${config.port}`);
-}
-
-if (!_.includes(['production', 'development', 'test'], config.env)) {
-  throw new TypeError(`config env [${config.env}] is wrong format`);
-}
-
-for (const [k, v] of _.toPairs(config)) {
-  if (!v) {
-    throw new TypeError(`config env [${k}] is required`);
-  }
+  console.log(`API http://${HOST}:${PORT}`)
 }

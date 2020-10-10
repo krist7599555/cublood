@@ -10,4 +10,7 @@ export class UsersStore {
   get(id: string) {
     return run(users.get(id))
   }
+  where(query: Partial<User> = {}) {
+    return run(users.filter(query));
+  }
 }
